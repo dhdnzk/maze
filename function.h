@@ -16,10 +16,10 @@ typedef struct node {
 } Node;
 
 typedef struct _stack {
-
-
-
-
+    Node *head;
+    Node *before;
+    Node *cur;
+    int numOfData;
 }
 
 /* 스택에 관련된 함수들 선언 */
