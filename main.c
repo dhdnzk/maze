@@ -12,6 +12,5 @@ int main(void) {
   }
 
   showResult(endOrNot);
-  printf("메인함수 return까지 도착\n");
   return 0;
 }

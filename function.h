@@ -15,6 +15,13 @@ typedef struct node {
   struct node *next;
 } Node;
 
+typedef struct _stack {
+
+
+
+
+}
+
 /* 스택에 관련된 함수들 선언 */
 void NodeInit(void);     //vv 
 void AddNode(int, int);      //vv

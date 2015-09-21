@@ -83,8 +83,6 @@ void showProblem(void) {
 
 void showResult(int result) {
 
-    printf("showResult함수 도착\n");
- 
   switch(result) {
 
   case GOAL:
@@ -128,7 +126,6 @@ int moving(void) {
     break;
   }
 
-  printf("moving함수에서 스위치문 통과 후 calcEndOrNot직전\n");
   sleep(10);
 
   return calcEndOrNot();
