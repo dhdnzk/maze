@@ -10,7 +10,6 @@ enum {GOAL = 1, END_AT_START_LINE, ING};
 #define VERTICAL_LEN 10
 
 typedef struct node {
-
   int xPos;
   int yPos;
   struct node *next;
