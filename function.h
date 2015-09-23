@@ -6,26 +6,26 @@
 enum {RIGHT = 1, DOWN, LEFT, UP, BACK};
 enum {GOAL = 1, END_AT_START_LINE, ING};
 
-#define CROSS_LEN 10
-#define VERTICAL_LEN 10
+#define COL_LEN 10
+#define ROW_LEN 10
 
-typedef struct node {
+typedef struct _node {
   int xPos;
   int yPos;
-  struct node *next;
+  struct _node *prev;
 } Node;
 
 typedef struct _stack {
-    Node *head;
-    Node *before;
+    Node *bottom;
     Node *cur;
     int numOfData;
-}
+}Stack;
 
 /* 스택에 관련된 함수들 선언 */
-void NodeInit(void);     //vv 
-void AddNode(int, int);      //vv
-void DeleteNode(void);   //vv
+void StackInit(Stack *);     //vv 
+void Push(Stack *, int, int);      //vv
+void Pop(Stack *);   //vv
+void Peek(Stack *);
 
 /* 화면 출력에 관련된 함수들 선언 */
 void showProblem(void);  //vv

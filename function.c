@@ -1,18 +1,6 @@
 #include "common.h"
 #include "function.h"
 
-int mazeBoard[VERTICAL_LEN][CROSS_LEN] = {
-	{0, 0, 0, 1, 1, 0, 1, 1, 1, 1},
-	{1, 1, 0, 1, 0, 0, 0, 0, 0, 0},
-	{0, 0, 0, 1, 1, 1, 0, 1, 1, 0},
-	{0, 1, 1, 0, 0, 0, 0, 1, 0, 0},
-	{0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
-	{1, 1, 1, 0, 1, 0, 0, 0, 0, 0},
-	{1, 0, 1, 0, 1, 0, 1, 1, 1, 0},
-	{0, 0, 0, 0, 1, 0, 1, 0, 0, 0},
-	{0, 1, 1, 1, 1, 0, 1, 0, 1, 1},
-	{0, 0, 0, 0, 0, 0, 1, 0, 0, 0}
-};
 
 int numOfMove=0;
 int numOfNode = 0;
@@ -21,33 +9,17 @@ Node *head = NULL;
 Node *curPos = NULL;
 
 /* 스택에 관련된 함수들 정의 */
-void NodeInit(void) {
+void StackInit(Stack *pStack) {
     
-    Node *new = (Node *)malloc(sizeof(Node));
-    head = new;
-    head->xPos = NULL;
-    head->yPos = NULL;
-
-    new = (Node *)malloc(sizeof(Node));
-    head->next = new;
-    new->yPos = 0;
-    new->xPos = 0;
-    new->next = NULL;
-    numOfNode = 1;
+    pStack->bottom = (Stack *)malloc(sizeof(Stack));
+    pStack->cur = NULL;
+    pStack->numOfData = 0;
 }
 
-void AddNode(int y, int x) {
+void Push(Stack *pStack, int y, int x) {
 
-    Node *temp = head->next;
 
-    Node *new = (Node *)malloc(sizeof(Node));
-    head->next = new;
-    head->next->next = temp;
 
-    head->next->yPos = y;
-    head->next->xPos = x;
-
-    numOfNode ++;
 }
 
 void DeleteNode(void) {
