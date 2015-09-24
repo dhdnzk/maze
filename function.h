@@ -11,7 +11,8 @@ enum {GOAL = 1, END_AT_START_LINE, ING};
 #define ROW_LEN 10
 
 typedef struct _mazeBoard {
-    int mazeBoard[ROW_LEN][COL_LEN] = {
+    int mazeBoard[ROW_LEN][COL_LEN]; 
+    {
         {0, 0, 0, 1, 1, 0, 1, 1, 1, 1},
         {1, 1, 0, 1, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 1, 1, 1, 0, 1, 1, 0},

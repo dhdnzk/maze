@@ -56,15 +56,26 @@ Position Peek(Stack *pStack) {
 
 /* 화면 출력에 관련된 함수들 정의 */
 void ShowMap(MazeBoard *map) {
-    printf("--------------------\n");
-    printf("
-
-    
+    int i, j;
+    printf("----------------------\n");
+    for(i = 0; i < ROW_LEN i++) {
+        printf("|");
+        for(j = 0; j < COL_LEN; j++) {
+            if(map->mazeBoard[i][j] == 1) {
+                printf("ㅁ");
+            }
+            else {
+                printf("  ");
+            }
+        }
+        printf("|\n");
+    }
+    printf("----------------------\n");
 }
 
 void showResult(int result) {
 }
-  
+
 
 /* 움직임에 관련된 함수들 정의 */
 int moving(void) {
