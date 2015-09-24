@@ -2,6 +2,8 @@
 #define __FUNCTION_H__
 
 #include "common.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 enum {RIGHT = 1, DOWN, LEFT, UP, BACK};
 enum {GOAL = 1, END_AT_START_LINE, ING};
@@ -16,8 +18,8 @@ typedef struct _node {
 } Node;
 
 typedef struct _stack {
-    Node *bottom;
-    Node *cur;
+    Node *basePointer;
+    Node *stackPointer;
     int numOfData;
 }Stack;
 

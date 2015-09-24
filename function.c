@@ -17,12 +17,12 @@ void StackInit(Stack *pStack) {
 }
 
 void Push(Stack *pStack, int y, int x) {
-
+    
 
 
 }
 
-void DeleteNode(void) {
+ DeleteNode(void) {
 
     Node *temp = head->next->next;
     head->next = temp->next;
