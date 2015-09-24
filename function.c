@@ -73,7 +73,9 @@ void ShowMap(MazeBoard *map) {
     printf("----------------------\n");
 }
 
-void showResult(int result) {
+void showResult(Stack *pStack) {
+    
+
 }
 
 

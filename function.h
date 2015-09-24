@@ -50,6 +50,7 @@ void Peek(Stack *);
 
 /* 화면 출력에 관련된 함수들 선언 */
 void ShowMap(MazeBoard *);
+void ShowResult(Stack *);
 
 /* 움직임에 관련된 함수들 정의 */
 int moving(void); 
