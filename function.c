@@ -54,43 +54,11 @@ Position Peek(Stack *pStack) {
 }
     
 
-    /* 화면 출력에 관련된 함수들 정의 */
+/* 화면 출력에 관련된 함수들 정의 */
 void showProblem(void) {
-
-	int i, j;
-	
-	printf("----------------------\n");
-	for(i = 0; i < CROSS_LEN; i++) {
-		printf("|");
-		for(j = 0; j < VERTICAL_LEN; j++) {
-			if(mazeBoard[i][j] == 1) {
-				printf("ㅁ");
-			}
-			else {
-				printf("  ");
-			}
-		}
-		printf("|\n");
-	}
-	printf("----------------------\n");
 }
 
 void showResult(int result) {
-
-  switch(result) {
-
-  case GOAL:
-          printf("골인! 이동 횟수 : %d\n", numOfMove);
-    break;
-
-  case END_AT_START_LINE:
-        printf("길이 없어서 입구로 돌아왔습니다. 이동횟수 : %d\n", numOfMove);
-    break;
-
-  case ING:
-    printf("중간에 끝?\n");
-    break;
-  }
 }
   
 
