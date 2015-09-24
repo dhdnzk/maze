@@ -11,10 +11,14 @@ enum {GOAL = 1, END_AT_START_LINE, ING};
 #define COL_LEN 10
 #define ROW_LEN 10
 
+typedef struct _position {
+    int xPos;
+    int yPos;
+} Position;
+
 typedef struct _node {
-  int xPos;
-  int yPos;
-  struct _node *prev;
+    struct _position *pos
+    struct _node *prev;
 } Node;
 
 typedef struct _stack {

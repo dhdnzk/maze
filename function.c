@@ -10,29 +10,59 @@ Node *curPos = NULL;
 
 /* 스택에 관련된 함수들 정의 */
 void StackInit(Stack *pStack) {
-    
-    pStack->bottom = (Stack *)malloc(sizeof(Stack));
-    pStack->cur = NULL;
+    pStack->basePointer = (Stack *)malloc(sizeof(Stack));
+    pStack->basePointer->prev = NULL;
+    pStack->basePointer->pos = NULL;
+    pStack->stackPointer = pStack->stackPointer;
     pStack->numOfData = 0;
 }
 
 void Push(Stack *pStack, int y, int x) {
-    
-
-
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    Position *newPos = (Position *)malloc(sizeof(Position));
+    newPos->yPos = y;
+    newPos->xPos = x;
+    newNode->pos = newPos;
+    newNode->prev = pStack->stackPointer;
+    pStack->stackPointer = newNode; 
+    ( pStack->numOfData )++;
 }
 
- DeleteNode(void) {
+Position Pop(Stack *pStack) {
+    if( pStack->numOfData == 0 ) {
+        printf("there is no data to return!\n");
+        return NULL;
+    }
+    else {
+    Position ret;
+    Node *tmpNode;
+    ret.xPos = pStack->stackPointer->pos->xPos;
+    ret.yPos = pStack->stackPointer->pos->yPos;
+    free(pStack->stackPointer->pos); 
+    tmpNode = pStack->stackPointer;
+    pStack->stackPointer = pStack->stackPointer->prev;
+    free(tmpNode);
+    (pStack->numOfData )--;
+    return ret;
 
-    Node *temp = head->next->next;
-    head->next = temp->next;
-    
-    free(temp);
-    numOfNode --;
+    }
 }
-              
 
-/* 화면 출력에 관련된 함수들 정의 */
+Position Peek(Stack *pStack) {
+    if ( pStack->numOfData == 0 ) {
+        printf("there is no data to return!\n");
+        return NULL;
+    }
+    else {
+        Position ret;
+        ret.xPos = pStack->stackPointer->pos->xPos; 
+        ret.yPos = pStack->stackPointer->pos->yPos; 
+        return ret;
+    }
+}
+    
+
+    /* 화면 출력에 관련된 함수들 정의 */
 void showProblem(void) {
 
 	int i, j;
