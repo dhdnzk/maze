@@ -10,6 +10,21 @@ enum {GOAL = 1, END_AT_START_LINE, ING};
 #define COL_LEN 10
 #define ROW_LEN 10
 
+typedef struct _mazeBoard {
+    int mazeBoard[ROW_LEN][COL_LEN] = {
+        {0, 0, 0, 1, 1, 0, 1, 1, 1, 1},
+        {1, 1, 0, 1, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 1, 1, 1, 0, 1, 1, 0},
+        {0, 1, 1, 0, 0, 0, 0, 1, 0, 0},
+        {0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
+        {1, 1, 1, 0, 1, 0, 0, 0, 0, 0},
+        {1, 0, 1, 0, 1, 0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 1, 0, 1, 0, 0, 0},
+        {0, 1, 1, 1, 1, 0, 1, 0, 1, 1},
+        {0, 0, 0, 0, 0, 0, 1, 0, 0, 0}
+    };
+}MazeBoard;
+
 typedef struct _position {
     int xPos;
     int yPos;
@@ -33,8 +48,7 @@ void Pop(Stack *);
 void Peek(Stack *);
 
 /* 화면 출력에 관련된 함수들 선언 */
-void showProblem(void);
-void showResult(int); 
+void ShowMap(MazeBoard *);
 
 /* 움직임에 관련된 함수들 정의 */
 int moving(void); 

@@ -55,7 +55,11 @@ Position Peek(Stack *pStack) {
     
 
 /* 화면 출력에 관련된 함수들 정의 */
-void showProblem(void) {
+void ShowMap(MazeBoard *map) {
+    printf("--------------------\n");
+    printf("
+
+    
 }
 
 void showResult(int result) {
