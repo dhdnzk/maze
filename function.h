@@ -1,7 +1,6 @@
 #ifndef __FUNCTION_H__
 #define __FUNCTION_H__
 
-#include "common.h"
 #include <stdio.h>
 #include <stdlib.h>
 

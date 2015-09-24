@@ -1,12 +1,4 @@
-#include "common.h"
 #include "function.h"
-
-
-int numOfMove=0;
-int numOfNode = 0;
-
-Node *head = NULL;
-Node *curPos = NULL;
 
 /* 스택에 관련된 함수들 정의 */
 void StackInit(Stack *pStack) {
